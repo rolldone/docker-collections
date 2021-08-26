@@ -1,0 +1,5 @@
+.sync_ignore 
+sync-config.yaml 
+sync-config.yml 
+.sync_temp
+.git/

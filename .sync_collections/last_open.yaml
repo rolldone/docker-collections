@@ -1,0 +1,35 @@
+project_name: Workspaces docker rolldone
+username: root
+privateKey: C:\Users\donny\.ssh\openssh_nopassword.key
+host: virtualbox.lan
+port: 22
+localPath: .
+remotePath: /root/workspaces/docker_rolldone
+ignores: []
+downloads: []
+single_sync: []
+trigger_permission:
+  unlink_folder: true
+  unlink: true
+  change: true
+  add: true
+direct_access:
+  config_file: ""
+  ssh_configs:
+    - Host: docker_rolldone_virtualbox
+      HostName: =host
+      User: =username
+      Port: =port
+      RequestTty: force
+      IdentityFile: =privateKey
+      StrictHostKeyChecking: no
+      RemoteCommand: cd =remotePath && bash -l
+      ServerAliveInterval: 300
+      ServerAliveCountMax: 2
+  ssh_commands:
+    - access_name: Initialize workspaces
+      command: ssh -v -o RemoteCommand=none docker_rolldone_virtualbox -t "mkdir
+        =remotePath && exit"
+    - access_name: Enter workspaces
+      command: ssh -v docker_rolldone_virtualbox
+saved_file_name: last_open.yaml
