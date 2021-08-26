@@ -1,8 +1,0 @@
-version: "3.8"
-services:
-  image_nginx_1_21_1:
-    build: ./image_nginx_1_21_1
-  image_php_7_2:
-    build: ./image_php_7_2
-  image_php_7_3:
-    build: ./image_php_7_3
