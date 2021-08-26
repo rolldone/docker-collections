@@ -1,2 +1,3 @@
 .sync_temp/
 docker-compose.yaml
+sync-config.yaml
